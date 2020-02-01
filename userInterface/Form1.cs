@@ -29,7 +29,7 @@ namespace userInterface
             GMapOverlay markers = new GMapOverlay("markers");
             GMapMarker marker = new GMarkerGoogle(
                 new PointLatLng(48.8617774, 2.349272),
-                GMarkerGoogleType.blue_pushpin);
+                GMarkerGoogleType.blue_dot);
             markers.Markers.Add(marker);
             gMap1.Overlays.Add(markers);
         }

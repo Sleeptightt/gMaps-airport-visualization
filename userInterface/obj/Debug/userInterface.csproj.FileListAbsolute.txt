@@ -21,3 +21,26 @@ C:\Users\Luis Felipe\source\repos\Airport Visualization\userInterface\obj\Debug\
 C:\Users\Luis Felipe\source\repos\Airport Visualization\userInterface\obj\Debug\userInterface.csproj.CopyComplete
 C:\Users\Luis Felipe\source\repos\Airport Visualization\userInterface\obj\Debug\userInterface.exe
 C:\Users\Luis Felipe\source\repos\Airport Visualization\userInterface\obj\Debug\userInterface.pdb
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\userInterface.exe.config
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\userInterface.exe
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\userInterface.pdb
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\EntityFramework.dll
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\GMap.NET.Core.dll
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\System.Data.SQLite.dll
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\EntityFramework.xml
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\System.Data.SQLite.xml
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.csprojAssemblyReference.cache
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.Form1.resources
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.Properties.Resources.resources
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.csproj.GenerateResource.cache
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.csproj.CopyComplete
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.exe
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.pdb
