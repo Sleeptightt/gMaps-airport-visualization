@@ -44,3 +44,6 @@ C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\
 C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.csproj.CopyComplete
 C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.exe
 C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.pdb
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\model.exe
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\model.pdb
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\model.exe.config
