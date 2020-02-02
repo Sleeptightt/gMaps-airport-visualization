@@ -10,23 +10,37 @@ namespace model
     class Airport
     {
         private String iataID;
-        private List<Flight> flights;
+        private List<Flight> arrivingFlights;
+        private List<Flight> departingFlights;
 
         public Airport(String iataID)
         {
             this.iataID = iataID;
-            flights = new List<Flight>();
+            arrivingFlights = new List<Flight>();
+            departingFlights = new List<Flight>();
         }
-        public List<Flight> getFlights()
+        public List<Flight> getDepartingFlights()
         {
-            return flights;
+            return departingFlights;
         }
 
-        public void addFlight(string airLineID, string origin, string destination, string departureTime,
-            string arriveTime, string date, string distance, string flightTime, bool isLate)
+        public List<Flight> getArrivingFlights()
+        {
+            return arrivingFlights;
+        }
+
+        public void addDepartingFlight(String airLineID, String origin, String destination, String departureTime,
+            String arriveTime, String date, String distance, String flightTime, Boolean isLate)
         {
             Flight flight = new Flight(airLineID, origin, destination, departureTime, arriveTime, date, distance, flightTime, isLate);
-            flights.Add(flight);
+            departingFlights.Add(flight);
+        }
+
+        public void addArrivingFlight(String airLineID, String origin, String destination, String departureTime,
+            String arriveTime, String date, String distance, String flightTime, Boolean isLate)
+        {
+            Flight flight = new Flight(airLineID, origin, destination, departureTime, arriveTime, date, distance, flightTime, isLate);
+            arrivingFlights.Add(flight);
         }
     }
 }

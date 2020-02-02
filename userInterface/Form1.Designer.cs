@@ -31,6 +31,7 @@
             this.gMap1 = new GMap.NET.WindowsForms.GMapControl();
             this.label1 = new System.Windows.Forms.Label();
             this.dataView = new System.Windows.Forms.DataGridView();
+            this.arrivingOrDepartingFlights = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,11 +81,25 @@
             this.dataView.TabIndex = 2;
             this.dataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataView_CellContentClick);
             // 
+            // arrivingOrDepartingFlights
+            // 
+            this.arrivingOrDepartingFlights.FormattingEnabled = true;
+            this.arrivingOrDepartingFlights.Items.AddRange(new object[] {
+            "Arriving flights",
+            "Departing flights"});
+            this.arrivingOrDepartingFlights.Location = new System.Drawing.Point(789, 10);
+            this.arrivingOrDepartingFlights.Name = "arrivingOrDepartingFlights";
+            this.arrivingOrDepartingFlights.Size = new System.Drawing.Size(158, 21);
+            this.arrivingOrDepartingFlights.TabIndex = 3;
+            this.arrivingOrDepartingFlights.Text = "Select a display option";
+            this.arrivingOrDepartingFlights.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 450);
+            this.Controls.Add(this.arrivingOrDepartingFlights);
             this.Controls.Add(this.dataView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gMap1);
@@ -101,6 +116,7 @@
         private GMap.NET.WindowsForms.GMapControl gMap1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataView;
+        private System.Windows.Forms.ComboBox arrivingOrDepartingFlights;
     }
 }
 

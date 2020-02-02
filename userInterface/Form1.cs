@@ -25,12 +25,38 @@ namespace userInterface
             manager = new DataManager();
             manager.readInfo();
             createGridView();
-            
         }
 
         private void gmap_OnMarkerClick(GMapMarker item, MouseEventArgs e)
         {
-            MessageBox.Show(String.Format("Marker {0} was clicked.", item.Tag));
+            if (arrivingOrDepartingFlights.SelectedIndex > -1)
+            {
+                if (arrivingOrDepartingFlights.Text == "Departing flights")
+                {
+                    this.dataView.DataSource = null;
+                    this.dataView.Rows.Clear();
+                    List<Flight> flights = manager.getDepartingAirportFlights((String)item.Tag);
+                    for (int i = 0; i < flights.Count; i++)
+                    {
+                        Flight f = flights[i];
+                        dataView.Rows.Add(f.AirLineID, f.Origin, f.Destination, f.DepartureTime, f.ArriveTime, f.Date, f.Distance, f.FlightTime, f.IsLate ? "Delayed" : "On time");
+                    }
+                }
+                else {
+                    this.dataView.DataSource = null;
+                    this.dataView.Rows.Clear();
+                    List<Flight> flights = manager.getArrivingAirportFlights((String)item.Tag);
+                    for (int i = 0; i < flights.Count; i++)
+                    {
+                        Flight f = flights[i];
+                        dataView.Rows.Add(f.AirLineID, f.Origin, f.Destination, f.DepartureTime, f.ArriveTime, f.Date, f.Distance, f.FlightTime, f.IsLate ? "Delayed" : "On time");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a display option");
+            }
         }
 
         private void gMap1_Load(object sender, EventArgs e)
@@ -121,7 +147,7 @@ namespace userInterface
             marker17.ToolTip.Stroke = Pens.Black; marker17.ToolTip.TextPadding = new Size(10, 10); marker17.ToolTipMode = MarkerTooltipMode.OnMouseOver;
             marker18.ToolTipText = "Minneapolis-Saint Paul \nInternational Airport\nMinneapolis, MN"; marker18.ToolTip.Fill = Brushes.Black; marker18.ToolTip.Foreground = Brushes.White;
             marker18.ToolTip.Stroke = Pens.Black; marker18.ToolTip.TextPadding = new Size(10, 10); marker18.ToolTipMode = MarkerTooltipMode.OnMouseOver;
-            marker19.ToolTipText = "Dulles \nInternational Airport\nDulles, VA"; marker19.ToolTip.Fill = Brushes.Black; marker19.ToolTip.Foreground = Brushes.White;
+            marker19.ToolTipText = "Washington Dulles \nInternational Airport\nDulles, VA"; marker19.ToolTip.Fill = Brushes.Black; marker19.ToolTip.Foreground = Brushes.White;
             marker19.ToolTip.Stroke = Pens.Black; marker19.ToolTip.TextPadding = new Size(10, 10); marker19.ToolTipMode = MarkerTooltipMode.OnMouseOver;
             marker20.ToolTipText = "Orlando \nInternational Airport\nOrlando, FL"; marker20.ToolTip.Fill = Brushes.Black; marker20.ToolTip.Foreground = Brushes.White;
             marker20.ToolTip.Stroke = Pens.Black; marker20.ToolTip.TextPadding = new Size(10, 10); marker20.ToolTipMode = MarkerTooltipMode.OnMouseOver;
@@ -296,6 +322,11 @@ namespace userInterface
         }
 
         private void dataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

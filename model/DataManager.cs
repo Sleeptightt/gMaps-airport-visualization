@@ -61,9 +61,14 @@ namespace model
             airports["SAF"] = new Airport("SAF");
         }
 
-        public List<Flight> getAirportFlights(String iata)
+        public List<Flight> getDepartingAirportFlights(String iata)
         {
-            return airports[iata].getFlights();
+            return airports[iata].getDepartingFlights();
+        }
+
+        public List<Flight> getArrivingAirportFlights(String iata)
+        {
+            return airports[iata].getArrivingFlights();
         }
 
         public void readInfo()
@@ -73,24 +78,28 @@ namespace model
             using (var stream = client.OpenRead(url))
             using (var reader = new StreamReader(stream))
             {
-                string line;
+                String line = reader.ReadLine();
                 int count = 0;
                 while ((count < 1000) && (line = reader.ReadLine()) != null)
                 {
-                    string[] args = line.Split(',');
+                    String[] args = line.Split(',');
 
-                    string airLineID = args[7];
-                    string origin = args[14];
-                    string destination = args[24];
-                    string departureTime = args[30];
-                    string arriveTime = args[41];
-                    string date = args[5];
-                    string distance = args[54];
-                    string flightTime = args[52];
+                    String airLineID = args[7].Replace("\"", "");
+                    String origin = args[14].Replace("\"", "");
+                    String destination = args[24].Replace("\"", "");
+                    String departureTime = args[31].Replace("\"", "");
+                    departureTime = departureTime[0] + "" + departureTime[1] + ":" + departureTime[2] + "" + departureTime[3];
+                    String arriveTime = args[42].Replace("\"", "");
+                    arriveTime = arriveTime[0] +""+ arriveTime[1] + ":" + arriveTime[2] + "" + arriveTime[3];
+                    String date = args[5].Replace("\"", "");
+                    String distance = args[56].Replace("\"", "");
+                    String flightTime = args[52].Replace("\"", "");
                     Boolean isLate = false;
+
                     if (airports.ContainsKey(origin) && airports.ContainsKey(destination))
                     {
-                        airports[origin].addFlight(airLineID, origin, destination, departureTime, arriveTime, date, distance, flightTime, isLate);
+                       airports[origin].addDepartingFlight(airLineID, origin, destination, departureTime, arriveTime, date, distance, flightTime, isLate);
+                       airports[destination].addArrivingFlight(airLineID, origin, destination, departureTime, arriveTime, date, distance, flightTime, isLate);
                     }
                     count++;
                 }
