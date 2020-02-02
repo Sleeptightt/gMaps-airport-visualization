@@ -67,9 +67,9 @@ C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userIn
 C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userInterface\bin\Debug\System.Data.SQLite.xml
 C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userInterface\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.csprojAssemblyReference.cache
-C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.Form1.resources
 C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.Properties.Resources.resources
 C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.csproj.GenerateResource.cache
 C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.csproj.CopyComplete
 C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.exe
 C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.pdb
+C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.airportScreen.resources
