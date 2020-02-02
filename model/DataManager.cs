@@ -11,24 +11,19 @@ namespace model
     public class DataManager
     {
 
-        private List<Flight> flights;
+        private Dictionary<String, Airport> airports;
         private const string PATH = "..\\..\\..\\data.csv";
 
         public DataManager()
         {
-
-            flights = new List<Flight>();
+            airports = new Dictionary<string, Airport>();
+            
         
         }
 
-        public List<Flight> Flights
+        public List<Flight> getFlights(String iata)
         {
-
-            get 
-            {
-                return flights;   
-            }
-        
+            return airports[iata]
         }
 
         public void readInfo()

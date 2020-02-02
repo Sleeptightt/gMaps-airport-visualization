@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace model
 {
+    
     class Airport
     {
+        private String iataID;
     }
 }

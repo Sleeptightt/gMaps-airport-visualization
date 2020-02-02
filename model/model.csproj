@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Airport.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="Flight.cs" />
     <Compile Include="Program.cs" />
