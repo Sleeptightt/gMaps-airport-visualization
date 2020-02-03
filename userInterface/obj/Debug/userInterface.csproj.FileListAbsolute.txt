@@ -38,7 +38,6 @@ C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\
 C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\System.Data.SQLite.xml
 C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.csprojAssemblyReference.cache
-C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.Form1.resources
 C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.Properties.Resources.resources
 C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.csproj.GenerateResource.cache
 C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.csproj.CopyComplete
@@ -73,3 +72,14 @@ C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userIn
 C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.exe
 C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.pdb
 C:\Users\User\Desktop\Integrador\taller gMaps\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.airportScreen.resources
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\userInterface.airportScreen.resources
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\Xamarin.Forms.Maps.dll
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\Xamarin.Forms.Platform.dll
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\Xamarin.Forms.Core.pdb
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\Xamarin.Forms.Maps.xml
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\Luis Felipe\source\repos\gMaps-airport-visualization\userInterface\obj\Debug\XamlC.stamp

@@ -17,48 +17,7 @@ namespace model
         public DataManager()
         {
             airports = new Dictionary<string, Airport>();
-            airports["CLT"] = new Airport("CLT");
-            airports["FLL"] = new Airport("FLL");
-            airports["RSW"] = new Airport("RSW");
-            airports["PHX"] = new Airport("PHX");
-            airports["ATL"] = new Airport("ATL");
-            airports["DTW"] = new Airport("DTW");
-            airports["PBI"] = new Airport("PBI");
-            airports["PIT"] = new Airport("PIT");
-            airports["PHL"] = new Airport("PHL");
-            airports["TPA"] = new Airport("TPA");
-            airports["MIA"] = new Airport("MIA");
-            airports["LAX"] = new Airport("LAX");
-            airports["DAL"] = new Airport("DAL");
-            airports["RNO"] = new Airport("RNO");
-            airports["LAS"] = new Airport("LAS");
-            airports["DEN"] = new Airport("DEN");
-            airports["SLC"] = new Airport("SLC");
-            airports["MSP"] = new Airport("MSP");
-            airports["IAD"] = new Airport("IAD");
-            airports["MCO"] = new Airport("MCO");
-            airports["CLE"] = new Airport("CLE");
-            airports["BOI"] = new Airport("BOI");
-            airports["ORD"] = new Airport("ORD");
-            airports["TUS"] = new Airport("TUS");
-            airports["FAI"] = new Airport("FAI");
-            airports["ICT"] = new Airport("ICT");
-            airports["AVL"] = new Airport("AVL");
-            airports["CVG"] = new Airport("CVG");
-            airports["KTN"] = new Airport("KTN");
-            airports["LAN"] = new Airport("LAN");
-            airports["MEM"] = new Airport("MEM");
-            airports["LBB"] = new Airport("LBB");
-            airports["RDD"] = new Airport("RDD");
-            airports["ROC"] = new Airport("ROC");
-            airports["SIT"] = new Airport("SIT");
-            airports["SAN"] = new Airport("SAN");
-            airports["YUM"] = new Airport("YUM");
-            airports["BNA"] = new Airport("BNA");
-            airports["TWF"] = new Airport("TWF");
-            airports["ABE"] = new Airport("ABE");
-            airports["MSO"] = new Airport("MSO");
-            airports["SAF"] = new Airport("SAF");
+            
         }
 
         public List<Flight> getDepartingAirportFlights(String iata)
@@ -71,12 +30,14 @@ namespace model
             return airports[iata].getArrivingFlights();
         }
 
-        public void readInfo()
+        public ISet<string> readInfo()
         {
             var url = "https://query.data.world/s/6ankomqkxpsxwh4nnxjnw4ffvc7knf";
             var client = new WebClient();
+            ISet<string> set = new HashSet<string>();
             using (var stream = client.OpenRead(url))
             using (var reader = new StreamReader(stream))
+
             {
                 String line = reader.ReadLine();
                 int count = 0;
@@ -87,6 +48,7 @@ namespace model
                     String airLineID = args[7].Replace("\"", "");
                     String origin = args[14].Replace("\"", "");
                     String destination = args[24].Replace("\"", "");
+                    set.Add(args[15].Split(',')[0] + ", " + args[19]+ ", USA"); set.Add(args[25].Split(',')[0] + ", " +args[29] + ", USA");
                     String departureTime = args[31].Replace("\"", "");
                     departureTime = departureTime[0] + "" + departureTime[1] + ":" + departureTime[2] + "" + departureTime[3];
                     String arriveTime = args[42].Replace("\"", "");
@@ -104,7 +66,12 @@ namespace model
                     count++;
                 }
 
+                foreach(string e in set){
+                    airports[e] = new Airport(e);
+                }
                 reader.Close();
+
+                return set;
             }
 
             

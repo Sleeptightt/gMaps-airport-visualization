@@ -25,9 +25,10 @@ namespace userInterface
             InitializeComponent();
             allRows = new List<DataGridViewRow>();
             manager = new DataManager();
-            manager.readInfo();
+            
             dataView.DataSource = new DataTable();
             createGridView();
+            
         }
 
         private void gmap_OnMarkerClick(GMapMarker item, MouseEventArgs e)
@@ -85,8 +86,27 @@ namespace userInterface
             gMap1.ShowCenter = false;
             gMap1.DragButton = MouseButtons.Left;
             gMap1.OnMarkerClick += gmap_OnMarkerClick;
+            ISet<string> set =  manager.readInfo();
 
             GMapOverlay markers = new GMapOverlay("markers");
+            foreach (string f in set)
+            {
+                GeoCoderStatusCode statusCode;
+                PointLatLng? pointLatLng1 = OpenStreet4UMapProvider.Instance.GetPoint(f, out statusCode);
+                if (pointLatLng1 != null)
+                {
+                    GMapMarker marker00 = new GMarkerGoogle(new PointLatLng(pointLatLng1.Value.Lat, pointLatLng1.Value.Lng), GMarkerGoogleType.blue_dot); marker00.Tag = f;
+                    markers.Markers.Add(marker00);
+                    marker00.ToolTipText = f; marker00.ToolTip.Fill = Brushes.Black; marker00.ToolTip.Foreground = Brushes.White;
+                    marker00.ToolTip.Stroke = Pens.Black; marker00.ToolTip.TextPadding = new Size(10, 10); marker00.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                }
+            }
+
+            gMap1.Overlays.Add(markers);
+
+
+
+            /*
             GMapMarker marker1 = new GMarkerGoogle(new PointLatLng(35.213889, -80.943056), GMarkerGoogleType.blue_dot); marker1.Tag = "CLT";
             GMapMarker marker2 = new GMarkerGoogle(new PointLatLng(26.0725, -80.152778), GMarkerGoogleType.blue_dot); marker2.Tag = "FLL";
             GMapMarker marker3 = new GMarkerGoogle(new PointLatLng(26.536111, -81.755278), GMarkerGoogleType.blue_dot); marker3.Tag = "RSW";
@@ -129,6 +149,8 @@ namespace userInterface
             GMapMarker marker40 = new GMarkerGoogle(new PointLatLng(40.652941, -75.436502), GMarkerGoogleType.blue_dot); marker40.Tag = "ABE";
             GMapMarker marker41 = new GMarkerGoogle(new PointLatLng(46.909829694, -114.087666316), GMarkerGoogleType.blue_dot); marker41.Tag = "MSO";
             GMapMarker marker42 = new GMarkerGoogle(new PointLatLng(35.617500, -106.088333), GMarkerGoogleType.blue_dot); marker42.Tag = "SAF";
+
+
 
             marker1.ToolTipText = "Charlotte Douglas \nInternational Airport\nCharlotte, NC"; marker1.ToolTip.Fill = Brushes.Black;  marker1.ToolTip.Foreground = Brushes.White;
             marker1.ToolTip.Stroke = Pens.Black; marker1.ToolTip.TextPadding = new Size(10, 10); marker1.ToolTipMode = MarkerTooltipMode.OnMouseOver;
@@ -215,6 +237,9 @@ namespace userInterface
             marker42.ToolTipText = "Santa Fe \nRegional Airport\nSanta Fe, NM"; marker42.ToolTip.Fill = Brushes.Black; marker42.ToolTip.Foreground = Brushes.White;
             marker42.ToolTip.Stroke = Pens.Black; marker42.ToolTip.TextPadding = new Size(10, 10); marker42.ToolTipMode = MarkerTooltipMode.OnMouseOver;
 
+  
+
+
             markers.Markers.Add(marker1);
             markers.Markers.Add(marker2);
             markers.Markers.Add(marker3);
@@ -257,11 +282,12 @@ namespace userInterface
             markers.Markers.Add(marker40);
             markers.Markers.Add(marker41);
             markers.Markers.Add(marker42);
+           markers.Markers.Add(marker00);
 
             gMap1.Overlays.Add(markers);
-        }
 
-        
+            */
+        }
 
         private void createGridView() 
         {
