@@ -48,7 +48,7 @@ namespace model
                     String airLineID = args[7].Replace("\"", "");
                     String origin = args[14].Replace("\"", "");
                     String destination = args[24].Replace("\"", "");
-                    set.Add(args[15].Split(',')[0] + ", " + args[19]+ ", USA"); set.Add(args[25].Split(',')[0] + ", " +args[29] + ", USA");
+                    set.Add(args[15].Split(',')[0].Replace("\"", "") + ", " + args[19].Replace("\"", "") + ", USA"); set.Add(args[25].Split(',')[0].Replace("\"", "") + ", " +args[29].Replace("\"", "") + ", USA");
                     String departureTime = args[31].Replace("\"", "");
                     departureTime = departureTime[0] + "" + departureTime[1] + ":" + departureTime[2] + "" + departureTime[3];
                     String arriveTime = args[42].Replace("\"", "");
@@ -58,19 +58,21 @@ namespace model
                     String flightTime = args[52].Replace("\"", "");
                     Boolean isLate = false;
 
-                    if (airports.ContainsKey(origin) && airports.ContainsKey(destination))
+                    if (airports.ContainsKey(args[15].Split(',')[0].Replace("\"", "") + ", " + args[19].Replace("\"", "") + ", USA") && airports.ContainsKey(args[25].Split(',')[0].Replace("\"", "") + ", " + args[29].Replace("\"", "") + ", USA"))
                     {
-                       airports[origin].addDepartingFlight(airLineID, origin, destination, departureTime, arriveTime, date, distance, flightTime, isLate);
-                       airports[destination].addArrivingFlight(airLineID, origin, destination, departureTime, arriveTime, date, distance, flightTime, isLate);
+                       airports[args[15].Split(',')[0].Replace("\"", "") + ", " + args[19].Replace("\"", "") + ", USA"].addDepartingFlight(airLineID, origin, destination, departureTime, arriveTime, date, distance, flightTime, isLate);
+                       airports[args[25].Split(',')[0].Replace("\"", "") + ", " + args[29].Replace("\"", "") + ", USA"].addArrivingFlight(airLineID, origin, destination, departureTime, arriveTime, date, distance, flightTime, isLate);
+                    }
+                    else
+                    {
+                        airports[args[15].Split(',')[0].Replace("\"", "") + ", " + args[19].Replace("\"", "") + ", USA"] = new Airport(args[15].Split(',')[0].Replace("\"", "") + ", " + args[19].Replace("\"", "") + ", USA");
+                        airports[args[25].Split(',')[0].Replace("\"", "") + ", " + args[29].Replace("\"", "") + ", USA"] = new Airport(args[25].Split(',')[0].Replace("\"", "") + ", " + args[29].Replace("\"", "") + ", USA");
+                        airports[args[15].Split(',')[0].Replace("\"", "") + ", " + args[19].Replace("\"", "") + ", USA"].addDepartingFlight(airLineID, origin, destination, departureTime, arriveTime, date, distance, flightTime, isLate);
+                        airports[args[25].Split(',')[0].Replace("\"", "") + ", " + args[29].Replace("\"", "") + ", USA"].addArrivingFlight(airLineID, origin, destination, departureTime, arriveTime, date, distance, flightTime, isLate);
                     }
                     count++;
                 }
-
-                foreach(string e in set){
-                    airports[e] = new Airport(e);
-                }
                 reader.Close();
-
                 return set;
             }
 
